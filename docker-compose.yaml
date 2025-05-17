@@ -11,7 +11,6 @@ services:
       - "443:443/tcp"
       - "4510-4559:4510-4559/tcp"
     environment:
-      - LOCALSTACK_AUTH_TOKEN=ls-teWA0876-SifU-TOje-1029-YACUyEnAd94c
       - DOCKER_HOST=unix:///var/run/docker.sock
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
