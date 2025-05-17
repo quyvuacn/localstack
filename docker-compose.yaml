@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  localstack:
+    image: localstack/localstack
+    container_name: localstack
+    ports:
+      - "4566:4566/tcp"
+      - "53:53/udp"
+      - "53:53/tcp"
+      - "443:443/tcp"
+      - "4510-4559:4510-4559/tcp"
+    environment:
+      - LOCALSTACK_AUTH_TOKEN=ls-teWA0876-SifU-TOje-1029-YACUyEnAd94c
+      - DOCKER_HOST=unix:///var/run/docker.sock
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./localstack-data:/var/lib/localstack
